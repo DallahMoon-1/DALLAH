@@ -9,26 +9,24 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #0a001f, #1a0033, #2d004d);
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
             color: #fff;
             text-align: center;
             overflow-x: hidden;
-            min-height: 100vh;
         }
         header {
-            padding: 100px 20px 80px;
-            background: radial-gradient(circle at center, #2d004d, #0a001f);
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.4);
         }
         .logo {
-            width: 220px;
+            width: 250px;
             animation: float 6s ease-in-out infinite;
-            border-radius: 50%;
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+            filter: drop-shadow(0 0 30px #ffd700);
         }
         h1 {
             font-size: 4.5em;
             margin: 30px 0;
-            text-shadow: 0 0 30px #ffd700, 0 0 50px #ffd700;
+            text-shadow: 0 0 30px #ffd700;
             color: #ffd700;
         }
         p {
@@ -37,52 +35,53 @@
             margin: 30px auto;
             line-height: 1.6;
         }
-        .ca-section {
-            margin: 60px auto;
-            max-width: 800px;
-        }
         .ca {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.15);
             padding: 30px;
             border-radius: 25px;
-            margin: 20px auto;
+            margin: 50px auto;
+            max-width: 800px;
             word-break: break-all;
             font-size: 1.4em;
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
         }
-        .copy-btn {
-            background: #ffd700;
-            color: #000;
-            border: none;
-            padding: 12px 25px;
+        .features {
+            margin: 60px auto;
+            max-width: 900px;
+            font-size: 1.6em;
+            line-height: 2;
+        }
+        .features i {
+            color: #00ff00;
+            margin-right: 10px;
+        }
+        .social-btn {
+            display: inline-block;
+            background: #000000;
+            color: white;
+            padding: 30px 60px;
             border-radius: 50px;
-            font-size: 1.2em;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-        .copy-btn:hover {
-            background: #fff;
-            transform: scale(1.1);
-        }
-        .social {
+            font-size: 2.5em;
+            text-decoration: none;
             margin: 80px 0;
+            transition: all 0.4s;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
         }
-        .social a {
-            color: #ffd700;
-            font-size: 5em;
-            margin: 0 40px;
-            transition: transform 0.4s, color 0.4s;
+        .social-btn img {
+            width: 80px;
+            height: 80px;
+            vertical-align: middle;
+            margin-right: 20px;
         }
-        .social a:hover {
-            transform: scale(1.4) rotate(10deg);
-            color: #fff;
+        .social-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.9);
         }
         .rocket {
             font-size: 7em;
-            animation: launch 3s infinite alternate;
-            margin: 40px 0;
+            animation: launch 2s infinite alternate;
+            color: #ffd700;
         }
         footer {
             padding: 40px;
@@ -91,63 +90,47 @@
             font-size: 1.2em;
         }
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-40px); }
-            100% { transform: translateY(0px); }
+            0% { transform: translatey(0px); }
+            50% { transform: translatey(-40px); }
+            100% { transform: translatey(0px); }
         }
         @keyframes launch {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-30px); }
-        }
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent url('https://i.imgur.com/8z7Q8.gif') repeat;
-            opacity: 0.3;
-            pointer-events: none;
+            0% { transform: translatey(0); }
+            100% { transform: translatey(-30px); }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    
     <header>
-        <!-- لوجو رئيسي جميل: دلة كرتونية كيوت مع وجه مرح -->
-        <img src="https://thumbs.dreamstime.com/b/charming-cartoon-illustration-traditional-arabic-coffee-pot-dallah-friendly-kawaii-style-face-pot-depicted-414080207.jpg" alt="DallahMoon Logo" class="logo">
-        
+        <img src="https://www.shutterstock.com/image-vector/traditional-arabic-coffee-pot-dallah-600nw-2650265669.jpg" alt="DallahMoon Logo" class="logo">
         <h1>DallahMoon ☕🌙</h1>
-        <p>The first Arabic cultural meme coin – Brewed with hospitality... To The Moon! 🚀</p>
+        <p>The first Arabic cultural meme coin – Brewed with hospitality, heading To The Moon!</p>
         <i class="fas fa-rocket rocket"></i>
     </header>
 
-    <section class="ca-section">
+    <section>
         <h2>Contract Address (Polygon)</h2>
         <div class="ca">
             0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1
         </div>
-        <button class="copy-btn" onclick="navigator.clipboard.writeText('0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1')">Copy CA</button>
-        <p style="margin-top: 30px; font-size: 1.6em;">Fair Launch | Renounced Ownership | Burned Supply ✅</p>
+
+        <div class="features">
+            <p><i class="fas fa-check"></i> Fair Launch – No presale, no team tokens</p>
+            <p><i class="fas fa-check"></i> Renounced Ownership – Contract ownership transferred to dead address forever. No one can mint, change fees, or rug!</p>
+            <p><i class="fas fa-check"></i> Burned Liquidity & Supply – Part of tokens burned for scarcity</p>
+            <p><i class="fas fa-check"></i> 100% Community Driven ✅</p>
+        </div>
     </section>
 
-    <section class="social">
-        <h2>Join the Community on X</h2>
-        <a href="https://x.com/DallahMoon" target="_blank">
-            <i class="fab fa-x-twitter"></i>
+    <section>
+        <a href="https://x.com/DallahMoon" target="_blank" class="social-btn">
+            <img src="https://s3-alpha.figma.com/hub/file/3879004233/787330c2-1582-48c9-a927-6f8310c33e05-cover.png" alt="X Icon">
+            Join Us on X
         </a>
     </section>
 
     <footer>
         <p>&copy; 2025 DallahMoon | Sip Coffee, Hold $DALLAH, To The Moon 🚀☕🌙</p>
     </footer>
-
-    <script>
-        // إشعار بسيط لما ينسخ الـ CA
-        document.querySelector('.copy-btn').addEventListener('click', function() {
-            alert('Contract Address copied! 📋');
-        });
-    </script>
 </body>
-    </html>
+                   </html>
