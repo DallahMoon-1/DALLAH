@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DallahMoon | $DALLAH - To The Moon ☕🌙</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -75,16 +76,18 @@
             color: #00ff00;
             margin-right: 10px;
         }
-        .social {
+        .social-icons {
             margin: 80px 0;
         }
-        .social img {
-            width: 120px;
-            transition: transform 0.4s, filter 0.4s;
+        .social-icons a {
+            color: #ffd700;
+            font-size: 4em;
+            margin: 0 30px;
+            transition: transform 0.4s, color 0.4s;
         }
-        .social a:hover img {
-            transform: scale(1.4) rotate(10deg);
-            filter: brightness(1.5);
+        .social-icons a:hover {
+            transform: scale(1.3) rotate(10deg);
+            color: #fff;
         }
         .rocket {
             font-size: 7em;
@@ -112,10 +115,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: transparent url('https://cdn.pixabay.com/animation/2024/07/23/19/52/19-52-56-478_512.gif') repeat;
-            opacity: 0.4;
+            background: transparent url('https://i.imgur.com/8z7Q8.gif') repeat;
+            opacity: 0.3;
             pointer-events: none;
-            z-index: -1;
         }
     </style>
 </head>
@@ -123,7 +125,6 @@
     <div class="stars"></div>
     
     <header>
-        <!-- لوجو كيوت كرتوني دلة مع وجه مرح (عالي الجودة ويظهر مضمون) -->
         <img src="https://thumbs.dreamstime.com/b/charming-cartoon-illustration-traditional-arabic-coffee-pot-dallah-friendly-kawaii-style-face-pot-depicted-414080207.jpg" alt="DallahMoon Logo" class="logo">
         
         <h1>DallahMoon ☕🌙</h1>
@@ -139,17 +140,19 @@
         <button class="copy-btn" onclick="navigator.clipboard.writeText('0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1')">Copy CA</button>
 
         <div class="features">
-            <p><i class="fas fa-check"></i> Renounced Ownership – Contract ownership transferred to dead address forever. No one can mint, change fees, or rug!</p>
+            <p><i class="fas fa-check"></i> Renounced Ownership – Contract ownership transferred to dead address forever</p>
             <p><i class="fas fa-check"></i> Burned Liquidity & Supply – Part of tokens burned for scarcity</p>
             <p><i class="fas fa-check"></i> 100% Community Driven ✅</p>
         </div>
     </section>
 
-    <section class="social">
-        <h2>Join the Community on X</h2>
-        <a href="https://x.com/DallahMoon" target="_blank">
-            <img src="https://toppng.com/uploads/preview/black-twitter-x-logo-circle-transparent-png-11690224482yrgv8r7ini.webp" alt="X Logo">
-        </a>
+    <section class="social-icons">
+        <h2>Join the Community</h2>
+        <a href="https://x.com/DallahMoon" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/share/1GGUQZMfyT/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@dallahmoon" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/dallahmoon" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.reddit.com/u/dallah-moon" target="_blank"><i class="fab fa-reddit"></i></a>
     </section>
 
     <footer>
