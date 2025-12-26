@@ -7,24 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Tajawal:wght@500&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Tajawal', 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #000000, #0d1b2a, #1b263b);
-            color: #ffffff;
-            text-align: center;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+        body { margin: 0; font-family: 'Tajawal', 'Arial', sans-serif; background: linear-gradient(to bottom, #000000, #0d1b2a, #1b263b); color: #ffffff; text-align: center; overflow-x: hidden; min-height: 100vh; }
         h1, h2 { font-family: 'Cairo', sans-serif; }
         header { padding: 100px 20px 80px; background: radial-gradient(circle at top center, #1b263b, #000000); }
-        .logo { width: 400px; max-width: 90%; animation: float 6s ease-in-out infinite; box-shadow: 0 0 80px rgba(255, 215, 0, 0.8); }
+        .logo { width: 420px; max-width: 90%; animation: float 6s ease-in-out infinite; box-shadow: 0 0 80px rgba(255, 215, 0, 0.8); }
         h1 { font-size: 4.5em; margin: 20px 0; text-shadow: 0 0 40px #ffd700; color: #ffd700; }
         p { font-size: 1.8em; max-width: 900px; margin: 30px auto; line-height: 1.8; }
-        .join-btn {
-            background: #ffd700; color: #000; border: none; padding: 20px 40px; border-radius: 50px;
-            font-size: 1.8em; cursor: pointer; margin: 40px; font-weight: bold; transition: 0.4s;
-        }
+        .join-btn { background: #ffd700; color: #000; border: none; padding: 20px 40px; border-radius: 50px; font-size: 1.8em; cursor: pointer; margin: 40px; font-weight: bold; transition: 0.4s; display: inline-block; text-decoration: none; }
         .join-btn:hover { background: #fff; transform: scale(1.1); box-shadow: 0 0 30px #ffd700; }
         section { padding: 60px 20px; }
         .about, .tokenomics, .roadmap { max-width: 1000px; margin: 0 auto; }
@@ -38,12 +27,11 @@
 <body>
 
     <header>
-        <!-- غير الرابط ده برابط اللوجو اللي عندك بعد الرفع (يفضل PNG شفاف) -->
-        <img src="https://YOUR-DALLAHMOON-LOGO-LINK-HERE.png" alt="DallahMoon Logo" class="logo">
+        <img src="https://i.imgur.com/7bF1e1b.png" alt="DallahMoon Logo" class="logo">
         
         <h1>DallahMoon ☕🌙</h1>
         <p>أول ميم كوين عربي ثقافي – مستوحى من الضيافة والدلة... إلى القمر معًا! 🚀</p>
-        <a href="https://t.me/DallahMoon" target="_blank"><button class="join-btn">انضم للتليجرام الآن 🚀</button></a>
+        <a href="https://t.me/DallahMoon" target="_blank"><div class="join-btn">انضم للتليجرام الآن 🚀</div></a>
     </header>
 
     <section class="about">
@@ -65,9 +53,10 @@
         <h2>Roadmap</h2>
         <div class="roadmap-grid">
             <div class="card"><h3>Phase 1</h3><p>بناء مجتمع قوي (X + Telegram Growth)</p></div>
-            <div class="card"><h3>Phase 2</h3><p>Fair Launch + Burn LP</p></div>
-            <div class="card"><h3>Phase 3</h3><p>Listings (CMC, CoinGecko) + Marketing</p></div>
-            <div class="card"><h3>Phase 4</h3><p>To The Moon! Partnerships & More 🚀</p></div>
+            <div class="card"><h3>Phase 2</h3><p>Presale – بيع مسبق للداعمين الأوائل</p></div>
+            <div class="card"><h3>Phase 3</h3><p>Fair Launch + Burn LP</p></div>
+            <div class="card"><h3>Phase 4</h3><p>Listings (CMC, CoinGecko) + Marketing</p></div>
+            <div class="card"><h3>Phase 5</h3><p>To The Moon! Partnerships & More 🚀</p></div>
         </div>
     </section>
 
@@ -81,7 +70,7 @@
             <a href="https://x.com/DallahMoon" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="https://t.me/DallahMoon" target="_blank"><i class="fab fa-telegram-plane"></i></a>
             <a href="https://coinmarketcap.com/community/profile/dallahmoon" target="_blank"><i class="fas fa-coins"></i></a>
-            <a href="https://dexscreener.com/polygon/0xcb037d01f6b602348a2a59f65532edcb3deecbf1" target="_blank"><i class="fas fa-chart-line"></i></a>
+            <a href="https://dexscreener.com/polygon/0xcb037d01f6b602348a2a59F65532edcb3deecbf1" target="_blank"><i class="fas fa-chart-line"></i></a>
         </div>
     </section>
 
@@ -93,4 +82,4 @@
         document.querySelector('.copy-btn').addEventListener('click', () => alert('تم نسخ العنوان! 📋'));
     </script>
 </body>
-</html>
+        </html>
