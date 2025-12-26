@@ -18,7 +18,7 @@
         }
         h1, h2 { font-family: 'Cairo', sans-serif; }
         header { padding: 100px 20px 80px; background: radial-gradient(circle at top center, #1b263b, #000000); }
-        .logo { width: 350px; animation: float 6s ease-in-out infinite; box-shadow: 0 0 60px rgba(255, 215, 0, 0.7); }
+        .logo { width: 400px; max-width: 90%; animation: float 6s ease-in-out infinite; box-shadow: 0 0 80px rgba(255, 215, 0, 0.8); }
         h1 { font-size: 4.5em; margin: 20px 0; text-shadow: 0 0 40px #ffd700; color: #ffd700; }
         p { font-size: 1.8em; max-width: 900px; margin: 30px auto; line-height: 1.8; }
         .join-btn {
@@ -32,14 +32,14 @@
         .card { background: rgba(255, 215, 0, 0.1); padding: 30px; border-radius: 20px; border: 2px solid #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
         .social-icons a { font-size: 4.5em; margin: 0 30px; }
         footer { padding: 50px; background: rgba(0,0,0,0.8); margin-top: 80px; }
-        /* باقي الأنميشن زي ما هي */
         @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="https://pbs.twimg.com/media/G82NtFGWgAACfyq.jpg" alt="DallahMoon Logo" class="logo">
+        <!-- غير الرابط ده برابط اللوجو اللي عندك بعد الرفع (يفضل PNG شفاف) -->
+        <img src="https://YOUR-DALLAHMOON-LOGO-LINK-HERE.png" alt="DallahMoon Logo" class="logo">
         
         <h1>DallahMoon ☕🌙</h1>
         <p>أول ميم كوين عربي ثقافي – مستوحى من الضيافة والدلة... إلى القمر معًا! 🚀</p>
@@ -93,4 +93,4 @@
         document.querySelector('.copy-btn').addEventListener('click', () => alert('تم نسخ العنوان! 📋'));
     </script>
 </body>
-    </html>
+</html>
