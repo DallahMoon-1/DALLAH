@@ -122,18 +122,6 @@
             border-color: rgba(255, 215, 0, 0.8);
         }
         
-        .copy-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .copy-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .copy-btn.copied {
-            background: #10b981 !important;
-        }
-        
         .stars {
             position: absolute;
             width: 100%;
@@ -229,12 +217,9 @@
    <section class="py-16 px-5">
     <div class="max-w-4xl mx-auto">
      <h2 id="contract-title" class="text-4xl md:text-5xl font-black mb-8" style="color: #ffd700;">Contract Address (Polygon)</h2>
-     <div class="ca-box p-6 rounded-2xl mb-6">
-      <code class="text-lg md:text-xl break-all block" id="contract-address">0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1</code>
+     <div class="ca-box p-8 rounded-2xl">
+      <code class="text-lg md:text-2xl break-all block" id="contract-address">0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1</code>
      </div>
-     <button onclick="copyContract()" id="copy-btn" class="copy-btn bg-yellow-500 text-black font-bold px-12 py-4 rounded-full hover:bg-yellow-400">
-      <i class="fas fa-copy mr-2"></i>Copy Contract Address
-     </button>
     </div>
    </section><!-- Social Media Section -->
    <section class="py-16 px-5">
@@ -262,25 +247,6 @@
                 star.style.animationDelay = Math.random() * 3 + 's';
                 starsContainer.appendChild(star);
             }
-        }
-        
-        // Copy contract address function - copies the full address
-        function copyContract() {
-            const contractText = "0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1";
-            navigator.clipboard.writeText(contractText).then(() => {
-                const btn = document.getElementById('copy-btn');
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
-                btn.classList.add('copied');
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.classList.remove('copied');
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Copy failed, please select and copy manually.');
-            });
         }
         
         // Initialize
@@ -384,4 +350,4 @@
         }
     </script>
  </body>
-      </html>
+ </html>
