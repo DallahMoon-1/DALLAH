@@ -154,7 +154,6 @@
             50% { opacity: 1; }
         }
         
-        /* إضافة لتوسيط النصوص في كل الأقسام */
         .text-center-all * {
             text-align: center !important;
         }
@@ -261,7 +260,7 @@
             }
         }
         
-        // Copy contract address function
+        // Copy contract address function - FIXED TO COPY FULL ADDRESS
         function copyContract() {
             const contractText = "0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1";
             navigator.clipboard.writeText(contractText).then(() => {
@@ -274,13 +273,16 @@
                     btn.innerHTML = originalHTML;
                     btn.classList.remove('copied');
                 }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Copy failed, please select and copy manually.');
             });
         }
         
         // Initialize
         createStars();
         
-        // Element SDK Configuration (updated to English defaults)
+        // Element SDK Configuration (English defaults)
         const defaultConfig = {
             background_color: "#000000",
             accent_color: "#ffd700",
@@ -378,4 +380,4 @@
         }
     </script>
  </body>
- </html>
+                                                </html>
