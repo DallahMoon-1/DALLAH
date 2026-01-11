@@ -9,290 +9,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-
-        body { 
-            margin: 0; 
-            font-family: 'Tajawal', 'Arial', sans-serif;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3 { 
-            font-family: 'Cairo', sans-serif; 
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #000000 0%, #0d1b2a 50%, #1b263b 100%);
-        }
-        
-        .header-gradient {
-            background: radial-gradient(ellipse at top center, #1b263b 0%, #000000 100%);
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-25px) rotate(3deg); } /* تحسين: حركة أقوى */
-            75% { transform: translateY(-15px) rotate(-3deg); }
-        }
-        
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.7); } /* تحسين: glow أقوى */
-            50% { box-shadow: 0 0 90px rgba(255, 215, 0, 1), 0 0 130px rgba(255, 215, 0, 0.9); }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); } /* تحسين: pulse أقوى */
-        }
-        
-        .logo { 
-            animation: float 5s ease-in-out infinite, glow 2.5s ease-in-out infinite; /* تحسين: سرعة أسرع */
-            border-radius: 20px;
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-        }
-        
+        body { box-sizing: border-box; margin:0; font-family: 'Tajawal', 'Arial', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Cairo', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #000000 0%, #0d1b2a 50%, #1b263b 100%); }
+        .header-gradient { background: radial-gradient(ellipse at top center, #1b263b 0%, #000000 100%); }
+        @keyframes float {0%,100%{transform:translateY(0) rotate(0);}25%{transform:translateY(-25px) rotate(3deg);}75%{transform:translateY(-15px) rotate(-3deg);}}
+        @keyframes glow {0%,100%{box-shadow:0 0 50px rgba(255,215,0,0.7);}50%{box-shadow:0 0 90px rgba(255,215,0,1),0 0 130px rgba(255,215,0,0.9);}}
+        @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+        @keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+        .logo { animation: float 5s ease-in-out infinite, glow 2.5s ease-in-out infinite; border-radius: 20px; }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
-        
-        .card {
-            background: rgba(255, 215, 0, 0.05);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card:hover {
-            background: rgba(255, 215, 0, 0.2); /* تحسين: hover أقوى */
-            border-color: rgba(255, 215, 0, 1);
-            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.4);
-            transform: translateY(-15px) scale(1.05);
-        }
-        
-        .join-btn {
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-        }
-        
-        .join-btn:hover {
-            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.7); /* تحسين: hover أقوى */
-            animation: pulse 1s infinite;
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-10px) scale(1.3); /* تحسين: hover أقوى */
-            filter: drop-shadow(0 15px 25px rgba(255, 215, 0, 0.6));
-        }
-        
-        .ca-box {
-            background: rgba(255, 215, 0, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.5);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .ca-box:hover {
-            background: rgba(255, 215, 0, 0.25);
-            border-color: rgba(255, 215, 0, 1);
-        }
-        
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2.5s infinite; /* تحسين: أسرع */
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-        }
-        
-        .text-center-all * {
-            text-align: center !important;
-        }
-
-        /* تحسين Typography وSpacing */
-        h1 { font-size: 3.5rem; margin-bottom: 1.5rem; } /* أكبر */
-        h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; } /* مسافات أكبر */
-        
-        /* Mobile Responsiveness تحسين */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .join-btn { font-size: 1.2rem; padding: 0.8rem 2rem; }
-            .logo { max-width: 80%; }
-        }
-
-        /* Countdown تحسين */
-        #countdown {
-            font-size: 1.5rem;
-            color: #ffd700;
-            padding: 1rem;
-            border: 2px solid #ffd700;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-
-        /* Progress Bar */
-        .progress-container {
-            background-color: #1b263b;
-            border-radius: 10px;
-            margin: 1rem 0;
-            height: 20px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            background-color: #ffd700;
-            height: 100%;
-            width: 0%; /* حاليًا 0% بناءً على البيانات الحقيقية */
-            transition: width 0.5s ease;
-        }
-    </style>
+        .card { background: rgba(255, 215, 0, 0.05); backdrop-filter: blur(10px); border: 2px solid rgba(255,215,0,0.3); transition: all 0.4s cubic-bezier(0.4,0,0.2,1);}
+        .card:hover { background: rgba(255,215,0,0.2); border-color: rgba(255,215,0,1); box-shadow:0 15px 50px rgba(255,215,0,0.4); transform: translateY(-15px) scale(1.05);}
+        .join-btn { transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(255,215,0,0.4);}
+        .join-btn:hover { box-shadow:0 20px 50px rgba(255,215,0,0.7); animation: pulse 1s infinite;}
+        .social-icon { transition: all 0.3s ease; display: inline-block; }
+        .social-icon:hover { transform: translateY(-10px) scale(1.3); filter: drop-shadow(0 15px 25px rgba(255,215,0,0.6)); }
+        .ca-box { background: rgba(255,215,0,0.1); border:2px solid rgba(255,215,0,0.5); backdrop-filter: blur(10px); transition: all 0.3s ease; }
+        .ca-box:hover { background: rgba(255,215,0,0.25); border-color: rgba(255,215,0,1); }
+        .stars { position: absolute; width:100%; height:100%; overflow:hidden; pointer-events:none; }
+        .star { position:absolute; background:white; border-radius:50%; animation: twinkle 2.5s infinite; }
+        @keyframes twinkle {0%,100%{opacity:0.4;}50%{opacity:1;}}
+        .text-center-all * { text-align:center !important; }
+        h1{font-size:3.5rem;margin-bottom:1.5rem;} h2{font-size:2.5rem;margin-bottom:1.5rem;} p{font-size:1.1rem; line-height:1.8;margin-bottom:1.5rem;}
+        @media (max-width:768px){h1{font-size:2.5rem;} h2{font-size:2rem;} .join-btn{font-size:1.2rem;padding:0.8rem 2rem;} .logo{max-width:80%;}}
+        #countdown {font-size:1.5rem;color:#ffd700;padding:1rem;border:2px solid #ffd700;border-radius:10px;margin-bottom:2rem;}
+        .progress-container {background-color:#1b263b;border-radius:10px;margin:1rem 0;height:20px;overflow:hidden;}
+        .progress-bar {background-color:#ffd700;height:100%;width:0%;transition: width 0.5s ease;}
+  </style>
   <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="gradient-bg text-white h-full overflow-auto text-center-all">
   <div class="w-full h-full">
-   <!-- Animated Stars Background - تحسين: أكثر كثافة -->
    <div class="stars" id="stars"></div>
-
-   <!-- Header - Hero Section تحسين -->
-   <header class="header-gradient relative px-5 py-24 md:py-36"> <!-- مسافات أكبر -->
+   <header class="header-gradient relative px-5 py-24 md:py-36">
     <div class="max-w-6xl mx-auto">
-     <img src="https://files.catbox.moe/28uih2.png" alt="DallahMoon Logo" class="logo w-full max-w-lg mx-auto mb-10 fade-in-up"> <!-- لوغو أكبر -->
-     <h1 id="main-title" class="text-6xl md:text-8xl font-black mb-8 fade-in-up delay-1" style="text-shadow: 0 0 50px #ffd700, 0 0 90px #ffd700; color: #ffd700;">DallahMoon ☕🌙</h1> <!-- حجم أكبر -->
+     <img src="https://files.catbox.moe/28uih2.png" alt="DallahMoon Logo" class="logo w-full max-w-lg mx-auto mb-10 fade-in-up">
+     <h1 id="main-title" class="text-6xl md:text-8xl font-black mb-8 fade-in-up delay-1" style="text-shadow: 0 0 50px #ffd700, 0 0 90px #ffd700; color: #ffd700;">DallahMoon ☕🌙</h1>
      <p id="subtitle" class="text-2xl md:text-3xl max-w-4xl mx-auto mb-12 leading-relaxed fade-in-up delay-2 px-4">The First Arabic Cultural Meme Coin – Brewed with Hospitality... To The Moon! 🚀</p>
      <div class="space-x-4 md:space-x-8">
-      <a href="https://t.me/DallahMoon" target="_blank" rel="noopener noreferrer" class="inline-block"> 
-       <button id="cta-button" class="join-btn bg-yellow-500 text-black font-bold text-2xl md:text-3xl px-14 py-6 rounded-full hover:bg-white fade-in-up delay-3"> Join Telegram Now 🚀 </button> <!-- أزرار أكبر -->
+      <a href="https://t.me/DallahMoon" target="_blank" rel="noopener noreferrer">
+       <button id="cta-button" class="join-btn bg-yellow-500 text-black font-bold text-2xl md:text-3xl px-14 py-6 rounded-full hover:bg-white fade-in-up delay-3"> Join Telegram Now 🚀 </button>
       </a>
-      <a href="https://www.pinksale.finance/launchpad/polygon/0x2F15Aa40aaF7517F4380b6f9d0aFce6BAd6F8705" target="_blank" rel="noopener noreferrer" class="inline-block">
+      <a href="https://www.pinksale.finance/launchpad/polygon/0x2F15Aa40aaF7517F4380b6f9d0aFce6BAd6F8705" target="_blank" rel="noopener noreferrer">
        <button class="join-btn bg-yellow-500 text-black font-bold text-2xl md:text-3xl px-14 py-6 rounded-full hover:bg-white fade-in-up delay-3"> Presale Live 🚀 </button>
       </a>
      </div>
     </div>
    </header>
 
-   <!-- About Section -->
-   <section class="py-20 px-5"> <!-- مسافات أكبر -->
-    <div class="max-w-5xl mx-auto">
-     <h2 id="about-title" class="text-5xl md:text-6xl font-black mb-10" style="color: #ffd700;">About the Project</h2>
-     <p id="about-text" class="text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto px-4">DallahMoon is the first meme coin celebrating Arabic culture and authentic hospitality. The Dallah symbolizes welcome and Arabic coffee, while the moon represents big ambition. Together, we spread this culture worldwide and go To The Moon! ☕🌙</p>
-    </div>
-   </section>
-
-   <!-- Tokenomics Section -->
-   <section class="py-20 px-5">
-    <div class="max-w-6xl mx-auto">
-     <h2 id="tokenomics-title" class="text-5xl md:text-6xl font-black mb-14" style="color: #ffd700;">Tokenomics</h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> <!-- مسافات أكبر -->
-      <div class="card p-10 rounded-2xl"> <!-- padding أكبر -->
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Total Supply</h3>
-       <p class="text-2xl">1,000,000,000 $DALLAH</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Taxes</h3>
-       <p class="text-2xl">0% Buy / 0% Sell</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Ownership</h3>
-       <p class="text-2xl">Renounced Forever ✅</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Liquidity</h3>
-       <p class="text-2xl">Will Be Burned After Launch 🔥</p>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Roadmap Section -->
-   <section class="py-20 px-5">
-    <div class="max-w-6xl mx-auto">
-     <h2 id="roadmap-title" class="text-5xl md:text-6xl font-black mb-14" style="color: #ffd700;">Roadmap</h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Phase 1</h3>
-       <p class="text-xl">Building a Strong Community (X + Telegram Growth)</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Phase 2</h3>
-       <p class="text-xl">Presale – Early Supporters Exclusive</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Phase 3</h3>
-       <p class="text-xl">Fair Launch + Burn LP</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Phase 4</h3>
-       <p class="text-xl">Listings (CMC, CoinGecko) + Marketing</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Phase 5</h3>
-       <p class="text-xl">To The Moon! Partnerships & More 🚀</p>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Presale Section - مع تحسين Countdown وإضافة Progress Bar -->
+   <!-- Presale Section -->
    <section class="py-20 px-5">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-5xl md:text-6xl font-black mb-14" style="color: #ffd700;">Presale Live on PinkSale!</h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"> <!-- مسافات أكبر -->
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div class="text-left px-4">
        <p class="text-xl md:text-2xl leading-relaxed mb-8">
         انضم إلى البيع المسبق الحصري للداعمين الأوائل!<br>
         احصل على $DALLAH بسعر مخفض قبل الإطلاق العادل.
        </p>
-       <ul class="text-xl space-y-4 mb-10"> <!-- مسافات أكبر -->
+       <ul class="text-xl space-y-4 mb-10">
         <li>✅ سعر الـ Presale: 1 POL = 1,750 $DALLAH</li>
         <li>✅ سعر الإدراج: 1 POL = 1,550 $DALLAH</li>
         <li>✅ Soft Cap: 45,000 POL | Hard Cap: 180,000 POL</li>
         <li>✅ يبدأ: 17 يناير 2026 | ينتهي: 31 يناير 2026</li>
         <li class="text-yellow-300 font-bold text-2xl">✅ برنامج الشركاء: اربح 3% على كل referral ناجح 🚀</li>
        </ul>
-       <div id="countdown" class="text-2xl font-bold text-yellow-500 mb-8"></div> <!-- تحسين: أكبر -->
+       <div id="countdown" class="text-2xl font-bold text-yellow-500 mb-8"></div>
        <div class="progress-container">
-        <div class="progress-bar" style="width: 0%;"></div> <!-- حقيقي: 0% الآن -->
+        <div class="progress-bar" style="width: 0%;"></div>
        </div>
-       <p class="text-xl font-bold mb-4">التقدم الحالي: 0 POL من 180,000 POL (0%)</p> <!-- بيانات حقيقية -->
+       <p class="text-xl font-bold mb-4">التقدم الحالي: 0 POL من 180,000 POL (0%)</p>
        <p class="text-xl mb-8 font-semibold text-yellow-400">
         كيفية التفعيل: أضف ?refId=عنوان محفظتك إلى رابط البيع المسبق وشاركه مع أصدقائك!
        </p>
@@ -303,218 +93,60 @@
        </a>
       </div>
       <div class="fade-in-up">
-       <img src="https://files.catbox.moe/28uih2.png" alt="DallahMoon Presale" class="logo w-full max-w-lg mx-auto"> <!-- لوغو أكبر -->
+       <img src="https://files.catbox.moe/28uih2.png" alt="DallahMoon Presale" class="logo w-full max-w-lg mx-auto">
       </div>
      </div>
     </div>
    </section>
 
-   <!-- إضافة جديدة: Trust Signals Section - بيانات حقيقية من PinkSale -->
-   <section class="py-20 px-5">
-    <div class="max-w-6xl mx-auto">
-     <h2 class="text-5xl md:text-6xl font-black mb-14" style="color: #ffd700;">Why Trust DallahMoon?</h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Ownership Renounced</h3>
-       <p class="text-xl">The contract ownership is renounced forever for security. ✅</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Liquidity Locked</h3>
-       <p class="text-xl">Liquidity locked for 365 days after pool ends. 🔒</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Unsold Tokens Burned</h3>
-       <p class="text-xl">Any unsold tokens will be burned. 🔥</p>
-      </div>
-     </div>
-     <p class="text-xl mt-10 text-center">All details verified on PinkSale platform.</p>
-    </div>
-   </section>
-
-   <!-- إضافة جديدة: How to Buy Section -->
-   <section class="py-20 px-5">
-    <div class="max-w-6xl mx-auto">
-     <h2 class="text-5xl md:text-6xl font-black mb-14" style="color: #ffd700;">How to Buy $DALLAH</h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Step 1</h3>
-       <p class="text-xl">Create a wallet (e.g., MetaMask or Trust Wallet) and add Polygon network.</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Step 2</h3>
-       <p class="text-xl">Buy POL tokens on an exchange and transfer to your wallet.</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Step 3</h3>
-       <p class="text-xl">Go to PinkSale link and connect your wallet.</p>
-      </div>
-      <div class="card p-10 rounded-2xl">
-       <h3 class="text-3xl font-bold mb-6" style="color: #ffd700;">Step 4</h3>
-       <p class="text-xl">Enter amount (min 50 POL, max 5,000 POL) and confirm purchase.</p>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Contract Address Section -->
-   <section class="py-20 px-5">
-    <div class="max-w-4xl mx-auto">
-     <h2 id="contract-title" class="text-5xl md:text-6xl font-black mb-10" style="color: #ffd700;">Contract Address (Polygon)</h2>
-     <div class="ca-box p-10 rounded-2xl">
-      <code class="text-2xl md:text-3xl break-all block" id="contract-address">0xCB037D01f6B602348a2A59F65532eDCb3DeEcbF1</code>
-     </div>
-    </div>
-   </section>
-
-   <!-- Social Media Section -->
-   <section class="py-20 px-5">
-    <h2 class="text-5xl md:text-6xl font-black mb-14" style="color: #ffd700;">Follow Us</h2>
-    <div class="flex justify-center gap-10 md:gap-16 flex-wrap"> <!-- مسافات أكبر -->
-     <a href="https://t.me/DallahMoon" target="_blank" rel="noopener noreferrer" class="social-icon text-7xl md:text-8xl" style="color: #ffd700;"> <i class="fab fa-telegram"></i> </a>
-     <a href="https://x.com/DallahMoon" target="_blank" rel="noopener noreferrer" class="social-icon text-7xl md:text-8xl" style="color: #ffd700;"> <i class="fab fa-x-twitter"></i> </a>
-     <a href="https://coinmarketcap.com/community/profile/dallahmoon" target="_blank" rel="noopener noreferrer" class="social-icon text-7xl md:text-8xl" style="color: #ffd700;"> <i class="fas fa-coins"></i> </a>
-    </div>
-   </section>
-
-   <!-- Footer -->
-   <footer class="py-16 px-5 mt-20" style="background: rgba(0,0,0,0.8);">
-    <p class="text-xl md:text-2xl">© 2026 DallahMoon. All Rights Reserved. To The Moon! 🚀☕🌙</p>
-   </footer>
   </div>
 
   <script>
-        // Create animated stars - تحسين: أكثر كثافة (150 بدل 100)
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starCount = 150;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.width = Math.random() * 4 + 'px'; // أكبر قليلاً
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starsContainer.appendChild(star);
-            }
+    // Animated stars
+    function createStars() {
+        const starsContainer = document.getElementById('stars');
+        const starCount = 150;
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 4 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
         }
-        
-        // Initialize
-        createStars();
-        
-        // Countdown Timer - تحسين: تنسيق أفضل
-        var countDownDate = new Date("Jan 31, 2026 00:00:00").getTime();
-        var x = setInterval(function() {
-          var now = new Date().getTime();
-          var distance = countDownDate - now;
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          document.getElementById("countdown").innerHTML = "الوقت المتبقي لنهاية البيع المسبق:<br>" + days + " أيام " + hours + " ساعات " + minutes + " دقائق " + seconds + " ثواني ";
-          if (distance < 0) {
-            clearInterval(x);
+    }
+    createStars();
+
+    // Smart Countdown
+    var saleStartDate = new Date("Jan 17, 2026 00:00:00").getTime();
+    var saleEndDate = new Date("Jan 31, 2026 00:00:00").getTime();
+
+    var countdownInterval = setInterval(function() {
+        var now = new Date().getTime();
+        var countdownText = "";
+        var distance;
+
+        if(now < saleStartDate) {
+            distance = saleStartDate - now;
+            countdownText = "الوقت المتبقي لبداية البيع المسبق:<br>";
+        } else if(now >= saleStartDate && now <= saleEndDate) {
+            distance = saleEndDate - now;
+            countdownText = "الوقت المتبقي لنهاية البيع المسبق:<br>";
+        } else {
             document.getElementById("countdown").innerHTML = "انتهى البيع المسبق!";
-          }
-        }, 1000);
-        
-        // Element SDK Configuration (غير متغير)
-        const defaultConfig = {
-            background_color: "#000000",
-            accent_color: "#ffd700",
-            card_color: "#1b263b",
-            text_color: "#ffffff",
-            button_color: "#ffd700",
-            font_family: "Cairo",
-            font_size: 16,
-            main_title: "DallahMoon ☕🌙",
-            subtitle: "The First Arabic Cultural Meme Coin – Brewed with Hospitality... To The Moon! 🚀",
-            cta_button: "Join Telegram Now 🚀",
-            about_title: "About the Project",
-            about_text: "DallahMoon is the first meme coin celebrating Arabic culture and authentic hospitality. The Dallah symbolizes welcome and Arabic coffee, while the moon represents big ambition. Together, we spread this culture worldwide and go To The Moon! ☕🌙",
-            tokenomics_title: "Tokenomics",
-            roadmap_title: "Roadmap",
-            contract_title: "Contract Address (Polygon)"
-        };
-        
-        async function onConfigChange(config) {
-            const baseFont = config.font_family || defaultConfig.font_family;
-            const baseFontStack = 'Tajawal, Arial, sans-serif';
-            const headingFontStack = `${baseFont}, ${baseFontStack}`;
-            const baseSize = config.font_size || defaultConfig.font_size;
-            
-            document.querySelectorAll('h1, h2, h3').forEach(el => {
-                el.style.fontFamily = headingFontStack;
-            });
-            document.body.style.fontFamily = `${baseFont}, ${baseFontStack}`;
-            
-            document.getElementById('main-title').style.fontSize = `${baseSize * 3.5}px`; // تحسين: أكبر
-            document.getElementById('subtitle').style.fontSize = `${baseSize * 1.5}px`;
-            document.getElementById('cta-button').style.fontSize = `${baseSize * 1.5}px`;
-            document.querySelectorAll('h2').forEach(el => {
-                el.style.fontSize = `${baseSize * 3}px`;
-            });
-            document.querySelectorAll('p').forEach(el => {
-                el.style.fontSize = `${baseSize * 1.25}px`;
-            });
-            
-            const bgColor = config.background_color || defaultConfig.background_color;
-            const accentColor = config.accent_color || defaultConfig.accent_color;
-            const textColor = config.text_color || defaultConfig.text_color;
-            const buttonColor = config.button_color || defaultConfig.button_color;
-            
-            document.body.style.background = `linear-gradient(135deg, ${bgColor} 0%, #0d1b2a 50%, #1b263b 100%)`;
-            document.body.style.color = textColor;
-            
-            document.querySelectorAll('h1, h2, h3').forEach(el => {
-                el.style.color = accentColor;
-            });
-            
-            document.querySelectorAll('.social-icon').forEach(el => {
-                el.style.color = accentColor;
-            });
-            
-            const joinBtn = document.getElementById('cta-button');
-            joinBtn.style.background = buttonColor;
-            
-            document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
-            document.getElementById('subtitle').textContent = config.subtitle || defaultConfig.subtitle;
-            document.getElementById('cta-button').textContent = config.cta_button || defaultConfig.cta_button;
-            document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
-            document.getElementById('about-text').textContent = config.about_text || defaultConfig.about_text;
-            document.getElementById('tokenomics-title').textContent = config.tokenomics_title || defaultConfig.tokenomics_title;
-            document.getElementById('roadmap-title').textContent = config.roadmap_title || defaultConfig.roadmap_title;
-            document.getElementById('contract-title').textContent = config.contract_title || defaultConfig.contract_title;
+            clearInterval(countdownInterval);
+            return;
         }
-        
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig,
-                onConfigChange,
-                mapToCapabilities: (config) => ({
-                    recolorables: [
-                        { get: () => config.background_color || defaultConfig.background_color, set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); } },
-                        { get: () => config.accent_color || defaultConfig.accent_color, set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); } },
-                        { get: () => config.text_color || defaultConfig.text_color, set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); } },
-                        { get: () => config.button_color || defaultConfig.button_color, set: (value) => { config.button_color = value; window.elementSdk.setConfig({ button_color: value }); } }
-                    ],
-                    borderables: [],
-                    fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); } },
-                    fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); } }
-                }),
-                mapToEditPanelValues: (config) => new Map([
-                    ["main_title", config.main_title || defaultConfig.main_title],
-                    ["subtitle", config.subtitle || defaultConfig.subtitle],
-                    ["cta_button", config.cta_button || defaultConfig.cta_button],
-                    ["about_title", config.about_title || defaultConfig.about_title],
-                    ["about_text", config.about_text || defaultConfig.about_text],
-                    ["tokenomics_title", config.tokenomics_title || defaultConfig.tokenomics_title],
-                    ["roadmap_title", config.roadmap_title || defaultConfig.roadmap_title],
-                    ["contract_title", config.contract_title || defaultConfig.contract_title]
-                ])
-            });
-        }
-    </script>
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
+        var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+        var seconds = Math.floor((distance % (1000*60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = countdownText + days + " أيام " + hours + " ساعات " + minutes + " دقائق " + seconds + " ثواني ";
+    }, 1000);
+  </script>
  </body>
-        </html>
+     </html>
